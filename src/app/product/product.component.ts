@@ -1,7 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Ipro } from './models/product';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogConfig,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { GetconfirmComponent } from '../getconfirm/getconfirm.component';
 import { GetConfirm1Component } from '../get-confirm1/get-confirm1.component';
 
@@ -21,7 +25,7 @@ export class ProductComponent implements OnInit {
   @ViewChild('duration') duration!: ElementRef;
 
   constructor(
-    private _matdialog : MatDialog,
+    private _matdialog: MatDialog,
     private _matsnackbar: MatSnackBar
   ) {}
 
@@ -33,163 +37,189 @@ export class ProductComponent implements OnInit {
 
   moviesarr: Array<Ipro> = [
     {
-      id: 1,
-      title: 'Inception',
-      rating: 8.8,
-      duration: '148 min',
+      id: 201,
+      title: 'Midnight Chase',
+      rating: 8.1,
+      duration: '134 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51s+u5yZ2RL._AC_.jpg',
+      poster: 'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4',
     },
     {
-      id: 2,
-      title: 'Interstellar',
-      rating: 8.7,
-      duration: '169 min',
-      language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/71n58xDHz9L._AC_SL1111_.jpg',
-    },
-    {
-      id: 3,
-      title: 'The Dark Knight',
-      rating: 9.0,
-      duration: '152 min',
-      language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51EbJjlY4rL._AC_.jpg',
-    },
-    {
-      id: 4,
-      title: 'Avatar',
-      rating: 7.8,
-      duration: '162 min',
-      language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/41kTVLeW1CL._AC_.jpg',
-    },
-    {
-      id: 5,
-      title: 'Titanic',
+      id: 202,
+      title: 'Silent Horizon',
       rating: 7.9,
-      duration: '195 min',
+      duration: '121 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/71Z3yJwzvUL._AC_SL1024_.jpg',
+      poster: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba',
     },
     {
-      id: 6,
-      title: 'Avengers: Endgame',
+      id: 203,
+      title: 'Last Signal',
       rating: 8.4,
-      duration: '181 min',
+      duration: '146 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SL1500_.jpg',
+      poster: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66',
     },
     {
-      id: 7,
-      title: 'Joker',
-
-      rating: 8.4,
-      duration: '122 min',
+      id: 204,
+      title: 'Red Planet',
+      rating: 7.6,
+      duration: '129 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/71yJLh9fHXL._AC_SL1178_.jpg',
+      poster: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1',
     },
     {
-      id: 8,
-      title: 'Forrest Gump',
+      id: 205,
+      title: 'Shadow Protocol',
+      rating: 8.0,
+      duration: '138 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1542204165-65bf26472b9b',
+    },
+    {
+      id: 206,
+      title: 'Neon Streets',
+      rating: 7.8,
+      duration: '118 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1505685296765-3a2736de412f',
+    },
 
-      rating: 8.8,
+    {
+      id: 209,
+      title: 'Frozen Night',
+      rating: 8.2,
+      duration: '141 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1497032205916-ac775f0649ae',
+    },
+    {
+      id: 302,
+      title: 'City of Shadows',
+      rating: 7.6,
+      duration: '124 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78',
+    },
+    {
+      id: 303,
+      title: 'Final Countdown',
+      rating: 8.3,
+      duration: '158 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66',
+    },
+    {
+      id: 304,
+      title: 'Lost in Space',
+      rating: 7.9,
+      duration: '133 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1',
+    },
+    {
+      id: 305,
+      title: 'Nightfall',
+      rating: 7.5,
+      duration: '116 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1505685296765-3a2736de412f',
+    },
+    {
+      id: 308,
+      title: 'Crimson Sky',
+      rating: 8.1,
+      duration: '149 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1497032205916-ac775f0649ae',
+    },
+    {
+      id: 401,
+      title: 'Edge of Reality',
+      rating: 8.1,
       duration: '142 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/61+9y1pP2VL._AC_SL1000_.jpg',
+      poster: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba',
     },
     {
-      id: 9,
-      title: 'The Matrix',
-      rating: 8.7,
-      duration: '136 min',
+      id: 402,
+      title: 'Silent Storm',
+      rating: 7.7,
+      duration: '128 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51vpnbwFHrL._AC_.jpg',
+      poster: 'https://images.unsplash.com/photo-1485846234645-a62644f84728',
     },
     {
-      id: 10,
-      title: 'Gladiator',
-
-      rating: 8.5,
+      id: 403,
+      title: 'Dark Matter',
+      rating: 8.4,
       duration: '155 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51A9W5o+Y6L._AC_.jpg',
+      poster: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1',
     },
     {
-      id: 12,
-      title: 'Parasite',
-
-      rating: 8.6,
-      duration: '132 min',
-      language: 'Korean',
-      poster: 'https://m.media-amazon.com/images/I/91Q5dCjc2KL._AC_SL1500_.jpg',
-    },
-    {
-      id: 13,
-      title: 'Spider-Man: No Way Home',
-
-      rating: 8.2,
-      duration: '148 min',
+      id: 404,
+      title: 'Neon Future',
+      rating: 7.9,
+      duration: '134 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/81Qn0F7l9TL._AC_SL1500_.jpg',
+      poster: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66',
     },
     {
-      id: 14,
-      title: 'Dune',
+      id: 405,
+      title: 'Lost Frequency',
       rating: 8.0,
-      duration: '155 min',
+      duration: '121 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/81ym3QUd3KL._AC_SL1500_.jpg',
+      poster: 'https://images.unsplash.com/photo-1505685296765-3a2736de412f',
     },
     {
-      id: 15,
-      title: 'Oppenheimer',
-
-      rating: 8.6,
-      duration: '180 min',
+      id: 408,
+      title: 'Parallel Lines',
+      rating: 8.3,
+      duration: '160 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/71lqDylcvGL._AC_SL1024_.jpg',
+      poster: 'https://images.unsplash.com/photo-1497032205916-ac775f0649ae',
     },
     {
-      id: 16,
-      title: 'The Godfather',
-
-      rating: 9.2,
-      duration: '175 min',
+      id: 409,
+      title: 'Cold Horizon',
+      rating: 7.8,
+      duration: '126 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51rOnIjLqzL._AC_.jpg',
+      poster: 'https://images.unsplash.com/photo-1512070679279-8988d32161be',
     },
     {
-      id: 17,
-      title: 'Fight Club',
-      rating: 8.8,
-      duration: '139 min',
-      language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg',
-    },
-    {
-      id: 18,
-      title: 'The Lord of the Rings: The Return of the King',
-      rating: 9.0,
-      duration: '201 min',
-      language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_.jpg',
-    },
-    {
-      id: 19,
-      title: 'Jurassic Park',
-      rating: 8.2,
-      duration: '127 min',
-      language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/81+g8T8d4AL._AC_SL1500_.jpg',
-    },
-    {
-      id: 20,
-      title: 'The Lion King',
+      id: 410,
+      title: 'Beyond the Sky',
       rating: 8.5,
-      duration: '88 min',
+      duration: '172 min',
       language: 'English',
-      poster: 'https://m.media-amazon.com/images/I/51NpxXH9QWL._AC_.jpg',
+      poster: 'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4',
+    },
+    {
+      id: 309,
+      title: 'Hidden Truth',
+      rating: 8.2,
+      duration: '137 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1512070679279-8988d32161be',
+    },
+    {
+      id: 310,
+      title: 'The Last Horizon',
+      rating: 8.5,
+      duration: '170 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4',
+    },
+    {
+      id: 210,
+      title: 'Golden Empire',
+      rating: 8.3,
+      duration: '165 min',
+      language: 'English',
+      poster: 'https://images.unsplash.com/photo-1512070679279-8988d32161be',
     },
   ];
 
@@ -214,7 +244,7 @@ export class ProductComponent implements OnInit {
     let matconfig = new MatDialogConfig();
     matconfig.disableClose = true;
     matconfig.width = '500px';
-    let MatDialogRef = this. _matdialog.open(GetConfirm1Component);
+    let MatDialogRef = this._matdialog.open(GetConfirm1Component);
 
     MatDialogRef.afterClosed().subscribe((res) => {
       if (res) {
