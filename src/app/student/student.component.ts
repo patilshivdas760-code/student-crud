@@ -25,6 +25,8 @@ export class StudentComponent implements OnInit {
     return s.id;
   }
 
+  
+
   uuid = () => {
     return String('xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx').replace(
       /[xy]/g,
@@ -136,7 +138,7 @@ export class StudentComponent implements OnInit {
  }
   
  onstdupdate(){
-     let update_obj :  Istd ={
+     let update_obj :Istd ={
       fname: this.fname.nativeElement.value,
       lname: this.lname.nativeElement.value,
       email: this.email.nativeElement.value,

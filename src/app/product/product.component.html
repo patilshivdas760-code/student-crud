@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6 my-3">
+      <div class="card p-3 mb-4">
+        <div class="form-group">
+          <label for="title">title</label>
+          <input class="form-control" type="text" #title />
+        </div>
+        <div class="form-group">
+          <label for="language">language</label>
+          <input class="form-control" type="text" #language />
+        </div>
+        <div class="form-group">
+          <label for="poster">poster</label>
+          <input class="form-control" type="text" #poster />
+        </div>
+        <div class="form-group">
+          <label for="duration">duration</label>
+          <input class="form-control" type="text" #duration />
+        </div>
+        <div class="form-group">
+          <label for="rating">rating</label>
+          <select class="form-control" #rating>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <div>
+          <button
+          *ngIf="!isineditmode"
+            (click)="onmovieadd()"
+            class="btn-block"
+            mat-raised-button
+            color="primary"
+          >
+            add movies
+          </button>
+          <button 
+            *ngIf="isineditmode"
+            (click) ="onmovieupdate()"
+          class="btn-block" mat-raised-button color="primary">
+            update movies
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let s of moviesarr" class="col-md-4 mb-2 mt-2">
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title>{{ s.title }}</mat-card-title>
+          <img mat-card-xl-image src="{{ s.poster }}" />
+        </mat-card-title-group>
+        <mat-card-content
+          ><h4>
+            <span>{{ s.language }} | Duration: {{ s.duration }} </span>
+          </h4>
+          <span> {{ s.rating }} </span>
+        </mat-card-content>
+        <mat-card-actions class="d-flex justify-content-between">
+          <button  (click)="onmovieedit(s)"  mat-raised-button color="primary">
+            edit
+          </button>
+          <button (click)="onmovieremove(s.id)"  mat-raised-button color="warn">
+            delete
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

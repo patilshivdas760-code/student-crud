@@ -9,16 +9,22 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule } from '@angular/material/card';
+
 
 import { StudentComponent } from './student/student.component';
 import { GetconfirmComponent } from './getconfirm/getconfirm.component';
+import { ProductComponent } from './product/product.component';
+import { GetConfirm1Component } from './get-confirm1/get-confirm1.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentComponent,
-    GetconfirmComponent
+    GetconfirmComponent,
+    ProductComponent,
+    GetConfirm1Component
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,8 @@ import { GetconfirmComponent } from './getconfirm/getconfirm.component';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
